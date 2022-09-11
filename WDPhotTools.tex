@@ -461,20 +461,22 @@ a good number of filters are provided.
     \label{fig:best_fit}
 \end{figure}
 
-Photometric fitting can be done by minimizing the $\chi^2$ with any method
+Photometric fitting can be performed by minimizing the $\chi^2$ with any method
 supported by \verb+scipy.optimize.minimize()+,
 \verb+scipy.optimize.least_squares()+ or with a Markov chain Monte
 Carlo method powered by \texttt{emcee}~\citep{2013PASP..125..306F} with the
 option to refine the solution with \verb+minimize()+ at the end using the
 50$^{\mathrm{th}}$-percentile as the initial guess and bounding the fit
-within N-sigmas uncertainty limit (user-defined). \textcolor{red}{At high
-temperatures ($T_{\mathrm{eff}} \geq 11\,000$\,K), the differences in mass
-inferred from pure H or pure He models are of the order of
-$\sim$\,$0.1\,\msun$. However, the differences between the pure He and mixed
-H/He solutions in the same temperature range are completely negligible. At
-lower temperatures, the atmospheric \textcolor{red}{compositions} have much
-stronger effects. The average mass of a population drops when fitted with
-pure H model, pure He, and then to mixed H/He models. The
+within N-sigmas uncertainty limit (user-defined). \textcolor{red}{The
+uncertainties are not computed when using the `minimize()` moethod, while
+the latter two do estimate the uncertainty as part of the minimisation
+procedure. At high temperatures ($T_{\mathrm{eff}} \geq 11\,000$\,K), the
+differences in mass inferred from pure H or pure He models are of the order
+of $\sim$\,$0.1\,\msun$. However, the differences between the pure He and
+mixed H/He solutions in the same temperature range are completely negligible.
+At lower temperatures, the atmospheric \textcolor{red}{compositions} have
+much stronger effects. The average mass of a population drops when fitted
+with pure H model, pure He, and then to mixed H/He models. The
 \textcolor{red}{above-average-mass} WDs in the $6\,000\,-10\,000$\,K
 temperature range \textcolor{red}{have} an average mass above $0.7\,\msun$
 under the assumption of pure hydrogen atmospheres, but this drops to
@@ -566,7 +568,7 @@ equation \ref{eq:mag_to_flux_err} and
 \ref{eq:propagation_of_err}:
 \begin{equation}
     \label{eq:mag_to_flux_err}
-    \sigma_{f}^{2} = \sigma_{m}^{2} \times \left[ \dfrac{\ln(10) f}{2.5} \right]^{2}
+    \sigma_{F}^{2} = \sigma_{M}^{2} \times \left[ \dfrac{\ln(10) F}{2.5} \right]^{2}
 \end{equation}
 and
 \begin{equation}
@@ -577,7 +579,7 @@ where $D$ and $\sigma_D$ are the distance and the corresponding uncertainty. By
 applying the distance-magnitude relation $M = m - 5\textcolor{red}{\log_{10}}(D)$, it simplifies to
 \begin{equation}
     \label{eq:mag_err}
-    \sigma_{M}^2 = \sigma^2_{m} + \left[ \dfrac{5 D}{\ln(10)} \right]^2 \sigma_{D}^2.
+    \sigma_{M}^2 = \sigma^2_{m} + \left[ \dfrac{5}{\ln(10)} \right]^2 \left(\dfrac{\sigma_{D}}{D}\right)^2.
 \end{equation}
 Substituting in also the flux-magnitude relation, using the parametrisation
 independent of the response of the photometric system: $m - m_{\mathrm{ZP}}=-2.5\textcolor{red}{\log_{10}}(F/F_{\mathrm{ZP}})$,
@@ -585,36 +587,37 @@ we arrive at the $\chi^2$ function to be minimized in the magnitude space weight
 by the formally propagated uncertainties:
 \begin{equation}
     \label{eq:chi2}
-    \chi^{2} = \dfrac{2.5}{\ln(10)} \sum_{i}\left\{ \dfrac{1}{\sigma_{M, i}} \left[ 10^{\frac{m_{i} - M_{\mathrm{model}, i}}{2.5}} - \dfrac{D^{2}}{100} \right] \right\}
+    \chi^{2} = \left[\dfrac{2.5}{\ln(10)}\right]^2 \times \sum_{i}\left\{ \dfrac{1}{\sigma_{M, i}^2} \left[ \left(\dfrac{10}{D}\right)^{2} \times  10^{\frac{m_{i} - M_{\mathrm{model}, i}}{2.5}} - 1 \right]^2 \right\}
 \end{equation}
 
 The third method we provide is to sample the parameter space with an Markov chain
 Monte Carlo method. This method more useful in the case when the uncertainties
 are large or with missing distance. The likelihood that has to be maximised takes
 a similar form to Equation~\ref{eq:chi2}:
-\begin{equation}
+\begin{multline}
     \label{eq:likelihood}
-    \mathcal{L} = -\dfrac{1}{2} \dfrac{2.5}{\ln(10)} \sum_{i} \left\{ 
-    \dfrac{1}{\sigma_{M, i}} \left[ 10^{\frac{m_{i} - M_{\mathrm{model}, i}}{2.5}}  - \dfrac{D^{2}}{100} \right]
+    \mathcal{L} = -\dfrac{1}{2} \left[\dfrac{2.5}{\ln(10)}\right]^2 \times \\ \sum_{i} \left\{ 
+    \dfrac{1}{\sigma_{M, i}^2} \left[ \left(\dfrac{10}{D}\right)^{2} \times 10^{\frac{m_{i} - M_{\mathrm{model}, i}}{2.5}} - 1 \right]^2
     + \ln(2\pi\sigma_i^2) \right\}.
-\end{equation}
+\end{multline}
 
 \subsection{Interstellar Reddening}
 \label{sec:interstellar_reddening}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 When interstellar reddening is included in the calculation, the $\chi^2$
 minimisation function becomes
-\begin{equation}
-    \label{eq:chi2_reddening}
-    \chi^{2} = \dfrac{2.5}{\ln(10)} \sum_{i}\left\{ \dfrac{1}{\sigma_{M, i}} \left[ 10^{\frac{m_{i} - M_{\mathrm{model}, i} - A_{i}(D)}{2.5}} - \dfrac{D^{2}}{100} \right] \right\};
-\end{equation}
+\begin{multline}
+    \label{eq:chi2}
+    \chi^{2} = \left[\dfrac{2.5}{\ln(10)}\right]^2 \times \sum_{i}\left\{ \dfrac{1}{\sigma_{M, i}^2} \left[ \left(\dfrac{10}{D}\right)^{2} \times \\ 10^{\frac{m_{i} - M_{\mathrm{model}, i} - A_{i}(D)}{2.5}} - 1 \right]^2 \right\}
+\end{multline}
+
 and the likelihood function to be maximised becomes
-\begin{equation}
+\begin{multline}
     \label{eq:likelihood}
-    \mathcal{L} = -\dfrac{1}{2} \dfrac{2.5}{\ln(10)} \sum_{i} \left\{ 
-    \dfrac{1}{\sigma_{M, i}} \left[ 10^{\frac{m_{i} - M_{\mathrm{model}, i} - A_{i}(D)}{2.5}}  - \dfrac{D^{2}}{100} \right]
+    \mathcal{L} = -\dfrac{1}{2} \left[\dfrac{2.5}{\ln(10)}\right]^2 \times \\ \sum_{i} \left\{ 
+    \dfrac{1}{\sigma_{M, i}^2} \left[ \left(\dfrac{10}{D}\right)^{2} \times  10^{\frac{m_{i} - M_{\mathrm{model}, i} - A_{i}(D)}{2.5}} - 1 \right]^2
     + \ln(2\pi\sigma_i^2) \right\}.
-\end{equation}
+\end{multline}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 where $A_i$ is the total extinction in filter $i$ at distance $D$. In the case
@@ -641,7 +644,7 @@ package~\citep{2016zndo....804967B}, for every theoretical
 spectrum available over all the filters available from the Montreal synthetic
 photometry table (see Figure~\ref{fig:interstellar_reddening})}.
 \textcolor{red}{In other words, we have a third (effective temperature) and a forth (surface gravity) dimension
-of Table 6 in SF11. Our values are making use of WD spectra instead of using a single MS spectrum at 7000\,K in SF11, which is intended to be a good set of average values for general use.}
+of Table 6 in SF11. Our values are making use of WD spectra instead of using a single spectrum of an MS star at 7000\,K in SF11, which is intended to be a good set of average values for general use.}
 The synthetic
 spectra do not cover some of the bluest filters, in such cases, we extend
 those spectra with blackbody profiles. The grid is stored in CSV format and
@@ -941,7 +944,7 @@ different at mass below $1\,\msun$, which has an MS lifetime of
 start to see a difference in the WDLF at ages above
 $11$\,Gyr~(Figure~\ref{fig:wdlf_compare_imf}). The IMFs only diverge
 \textcolor{red}{significantly} well into the M-dwarf/brown dwarf
-regime\textcolor{red}{. Even At} a computed age of $15$\,Gyr
+regime\textcolor{red}{. Even at} a computed age of $15$\,Gyr
 we are only including stars with ZAM masses as low as $\sim$ $0.96\,\msun$.
 Nevertheless, if a metal-poor MS lifetime model is used, this can change the
 picture slightly \textcolor{red}{as they are more short-lived}.
