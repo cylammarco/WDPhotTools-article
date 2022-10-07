@@ -17,7 +17,6 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Basic setup. Most papers should leave these options alone.
-%\documentclass[fleqn,usenatbib,referee]{rasti}
 \documentclass[fleqn,usenatbib]{rasti}
 
 % RASTI is set in Times font. If you don't have this installed (most LaTeX
@@ -69,17 +68,18 @@
 % The list of authors, and the short list which is used in the headers.
 % If you need two or more lines of authors, add an extra line using \newauthor
 \author[M. C. Lam et al.]{
-M. C. Lam$^{1\,\orcid{0000-0002-9347-2298}}$\thanks{Contact e-mail: \href{mailto:lam@tau.ac.il}{lam@tau.ac.il}},
-K. W. Yuen$^{2}$,
-W. Li$^{1\,\orcid{0000-0002-0096-3523}}$, and
-M. J. Green$^{1\,\orcid{0000-0002-0948-4801}}$\\
+M. C. Lam$^{1, 2\,\orcid{0000-0002-9347-2298}}$\thanks{Contact e-mail: \href{mailto:lam@mail.tau.ac.il}{lam@mail.tau.ac.il}},
+K. W. Yuen$^{3}$,
+M. J. Green$^{1\,\orcid{0000-0002-0948-4801}}$, and
+W. Li$^{1\,\orcid{0000-0002-0096-3523}}$\\
 % List of institutions
 $^{1}$School of Physics and Astronomy, Tel Aviv University, Tel Aviv, Israel 69978\\
-$^{2}$Department of Ophthalmology \& Visual Sciences, Faculty of Medicine, The Chinese University of Hong Kong
+$^{2}$Astrophysics Research Institute, Liverpool John Moores University, IC2, LSP, 146 Brownlow Hill, Liverpool L3 5RF, UK\\
+$^{3}$Department of Ophthalmology \& Visual Sciences, Faculty of Medicine, The Chinese University of Hong Kong
 }
 
 % These dates will be filled out by the publisher
-\date{Accepted XXX. Received YYY; in original form ZZZ}
+\date{Accepted 2022. Received 2022; in original form 2022}
 
 % Enter the current year, for the copyright statements etc.
 \pubyear{2022}
@@ -93,22 +93,20 @@ $^{2}$Department of Ophthalmology \& Visual Sciences, Faculty of Medicine, The C
 % Abstract of the paper
 \begin{abstract}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-From data collection to \textcolor{red}{photometric fitting and analysis of
-white dwarfs, to} generating a white dwarf luminosity function, requires
-numerous Astrophysical, Mathematical and Computational domain knowledge. The
-steep learning curve makes it difficult to enter the field and often
-individuals have to reinvent the wheel to perform identical data reduction and
-analysis tasks. We have gathered \textcolor{red}{a wide range of} publicly
-available white dwarf cooling models and synthetic photometry to provide a
-toolkit that allows \textcolor{red}{(1)}~visualisation of various models,
-\textcolor{red}{(2)}~photometric fitting of a white dwarf with or without
-distance and reddening, and \textcolor{red}{(3)}~the computing of white
-dwarf luminosity functions with a choice of initial mass function, main
-sequence evolution model, star formation history, initial-final mass relation,
-and white dwarf cooling model. We have recomputed \textcolor{red}{and compared
-the effective temperature of the white dwarfs from the} Gaia EDR3 white dwarf
-catalogue from \citet{2021MNRAS.508.3877G}. \textcolor{red}{The two independent
-works show excellent agreements in the temperature solutions}.
+From data collection to photometric fitting and analysis of white dwarfs,
+generating a white dwarf luminosity function requires numerous Astrophysical,
+Mathematical and Computational domain knowledge. The steep learning curve makes
+it difficult to enter the field, and often individuals have to reinvent the wheel
+to perform identical data reduction and analysis tasks. We have gathered a wide
+range of publicly available white dwarf cooling models and synthetic photometry
+to provide a toolkit that allows (1)~visualisation of various models,
+(2)~photometric fitting of a white dwarf with or without distance and reddening,
+and (3)~the computing of white dwarf luminosity functions with a choice of
+initial mass function, main sequence evolution model, star formation history,
+initial-final mass relation, and white dwarf cooling model. We have recomputed
+and compared the effective temperature of the white dwarfs from the Gaia EDR3
+white dwarf catalogue. The two independent works show excellent agreement in
+the temperature solutions.
 \end{abstract}
 
 % Select between one and six entries from the list of approved keywords.
@@ -128,12 +126,12 @@ $\sim$\,$8\msun$~\citep{2013sse..book.....K}. Since this
 mass range encompasses the vast majority of stars in the Galaxy, these
 degenerate remnants are the most common final product of stellar evolution,
 thus providing a good sample to study the history of stellar evolution and star
-formation in the Galaxy. In this state, there is little nuclear burning to
-replenish the energy they radiate away. As a consequence, the luminosity and
-temperature decrease monotonically with time. The electron degenerate nature
-means that a WD with a typical mass of $0.6\mathcal{M}_{\sun}$ has a similar
-size to the Earth, giving rise to their high densities, low luminosities, and
-large surface gravities.
+formation at the earliest time of the Galaxy. In this state,
+there is little nuclear burning to replenish the energy they radiate away. As a
+consequence, the luminosity and temperature decrease monotonically with time.
+The electron degenerate nature means that a WD with a typical mass of
+$0.6\mathcal{M}_{\sun}$ has a similar size to the Earth, giving rise to their
+high densities, low luminosities, and large surface gravities.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 The use of the white dwarf luminosity function~(WDLF) as a cosmochronometer was
@@ -148,40 +146,41 @@ theory~(e.g.,~\citealp{1984ApJ...282..615I}). A decade later,
 estimated the age\footnote{``Age'' refers to the total time since the oldest
 WD progenitor arrived at the zero-age main sequence.} of the disc to be
 $9.3 \pm 2.0$\,Gyr~(see also \citealt{1988ApJ...332..891L}). While most studies
-focused on the \textcolor{red}{combined} Galactic \textcolor{red}{thin and thick} discs~\citep{1989LNP...328...15L, 1992ApJ...386..539W,
-1995LNP...443...24O, 1998ApJ...497..294L, 1999MNRAS.306..736K,
-2012ApJS..199...29G, 2021A&A...649A...6G}, some worked with \textcolor{red}{the combined discs and} the stellar
-halo~\citep{2006AJ....131..571H, 2017AJ....153...10M, 2019MNRAS.482..715L}.
-\textcolor{red}{There was one attempt in disentangling the thin disc, thick disc
-and the stellar halo component WDLFs \citep{2011MNRAS.417...93R}}.
+focused on the combined Galactic thin and thick discs~\citep{1989LNP...328...15L,
+1992ApJ...386..539W, 1995LNP...443...24O, 1998ApJ...497..294L, 1999MNRAS.306..736K,
+2012ApJS..199...29G, 2021A&A...649A...6G}, some worked with the combined discs
+and the stellar halo~\citep{2006AJ....131..571H, 2017AJ....153...10M,
+2019MNRAS.482..715L}. There was one attempt in disentangling the thin disc,
+thick disc and the stellar halo component WDLFs \citep{2011MNRAS.417...93R}.
  
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Most WDs have similar broadband colour to main sequence stars,
-\textcolor{red}{so} they cannot be identified using photometry alone. They are
+so they cannot be identified using photometry alone. They are
 found from UV-excess, large proper motion and/or parallax. Because of the
 strongly peaked surface gravity distribution of WDs, photometric fitting for
 their intrinsic properties is possible by assuming a surface gravity. WDs
-fitted in such a way are useful statistically provided that the sample is not
+fitted in such a way are statistically useful provided that the
+sample is not
 strongly biased. This is demonstrated in various studies comparing photometric
 and spectroscopic solutions to calibrate the atmosphere
 model~\citep{2019ApJ...871..169G, 2019ApJ...882..106G}, as well as from the
 agreeing shapes of the WDLFs from spectroscopic and photometric samples. The
 Gaia satellite provides parallactic measurements for over a billion point
-sources~\citep{2021A&A...649A...1G, 2021AJ....161..147B} of which $359,000$
+sources~\citep{2021A&A...649A...1G, 2021AJ....161..147B} of which $359\,000$
 are high confidence WD candidates~\citep[][hereafter, GF21]{2021MNRAS.508.3877G}.
-The availability of parallaxes allows much more accurate fitting, particularly
+The availability of parallaxes allows much more accurate fitting, particularly,
 without knowing the surface gravity for the photometric sample. This has
 completely  revolutionized the field of WD sciences. In the forthcoming decade,
 the Simonyi Survey Telescope at the Vera C. Rubin Observatory will continue to
 discover more WDs at fainter magnitudes, but only accompanied by proper
-motion measurement at best \textcolor{red}{at the faintest magnitudes}.
-Furthermore, at those magnitudes, it is infeasible to collect spectrum for most
+motion measurement at best at the faintest magnitudes.
+Furthermore, at those magnitudes, it is infeasible to collect spectra for most
 of them and thus studies will mostly rely on photometric methods.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-In this generation of user-side \textcolor{red}{astronomical} data handling and
-analysis, as well as in the computing courses for scientists, \texttt{Python} is
-among the most popular languages due to \textcolor{red}{its} ease to use with a
+In this generation of user-side astronomical data handling and
+analysis, as well as in the computing courses for scientists, \textsc{Python} is
+among the most popular languages due to its ease to use with a
 relatively shallow learning curve, readable syntax and a simple way to `glue'
 different pieces of software together. Its flexibility to serve as a scripting
 and an object-oriented language makes it useful in many use cases: demonstrating
@@ -190,14 +189,14 @@ be compiled if wanted. This broad range of functionality and high-level usage
 make it relatively inefficient. However, Python is an excellent choice of
 language to build wrappers over highly efficient and well-established codes. In
 fact, some of the most used packages,
-\textcolor{red}{\texttt{scipy}}~\citep{2020NatMe..17..261V} and
-\textcolor{red}{\texttt{numpy}}~\citep{2020Natur.585..357H}, are written in
-\textcolor{red}{\texttt{Fortran}} and \textcolor{red}{\texttt{C}} respectively.
-\texttt{WDPhotTools} depends heavily on these two highly optimised and matured
+\textsc{scipy}~\citep{2020NatMe..17..261V} and
+\textsc{numpy}~\citep{2020Natur.585..357H}, are written in
+\textsc{Fortran} and \textsc{C}, respectively.
+\textsc{WDPhotTools} depends heavily on these two highly optimised and matured
 packages to deliver the desired efficiency.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\textcolor{red}{This paper is organised} as follows: in Section~\textsection2, we describe
+This paper is organised as follows: in Section~\textsection2, we describe
 the software structure and development process. Section~\textsection3 describes
 the model formatter. Section~\textsection4 covers the photometric fitting
 procedures and the overview of the model used. It also explains the
@@ -215,40 +214,40 @@ for the (initial) ZAMS mass, and $\mathcal{M}_f$ for the (final) WD mass.
 \section{Software and Development Organisation}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 The goal of this work is to ease researchers the effort in reinventing the
-wheel for trivial, repetitive but essential \textcolor{red}{first \textcolor{red}{steps} in many}
-aspects of data analysis for WD science. \texttt{WDPhotTools} \textcolor{red}{allows} a simple
-setup to compare results \textcolor{red}{from different choices of models. We note that this work is only suitable for the analysis of the
+wheel for trivial, repetitive but essential first steps in many
+aspects of data analysis for WD science. \textsc{WDPhotTools} allows a simple
+setup to compare results from different choices of models. We note that this work is only suitable for the analysis of the
 most common types of WDs. It is not advisable to perform analysis on any WDs
 that are suspected to have evolved with companion, or with atypical core
-and/or atmospheric composition.}
+and/or atmospheric composition.
 There is already a spectroscopic version for a similar purpose, the
 \textsc{wdtools} \footnote{\url{https://github.com/vedantchandra/wdtools}}~
-\citep{2020MNRAS.497.2688C}. \textcolor{red}{While we are drawing
+\citep{2020MNRAS.497.2688C}. While we are drawing
 an analogy between the two pieces of software, we would like to emphasise that their
 implementation starts from a lower level that directly makes use of the
 output products of the stellar evolution models. The synthetic
-photometry part of the \texttt{WDPhotTools} begins with pre-computed
+photometry part of the \textsc{WDPhotTools} begins with pre-computed
 tables in which the filter profiles have already been convolved with the model
 spectra, with the normalisation (absolute magnitude) of the photometry
 determined based on the mass-radius relation from their simulations. Future
-development of \texttt{WDPhotTools} will move away from this~(see
-Section~\textsection7.}
+development of \textsc{WDPhotTools} will move away from this~(see
+Section~\textsection7).
 
-\textsc{WDPhotTools} can generate colour-colour \textcolor{red}{diagrams},
-colour-magnitude \textcolor{red}{diagrams} in various photometric systems,
-\textcolor{red}{plot} cooling profiles from different models, and compute
-theoretical \textcolor{red}{WDLF} based on the built-in or supplied models.
+\textsc{WDPhotTools} can generate colour-colour diagrams,
+colour-magnitude diagrams in various photometric systems,
+plot cooling profiles from different models, and compute
+theoretical WDLF based on the built-in or supplied models.
 The core parts of this work are three-fold: (1)~the tailored-formatters that
 handle the output models from various works in the format as they were
 generated and downloaded. This allows the software to be updated to handle
-future releases of the models easily. \textcolor{red}{They are written as
+future releases of the models easily. They are written as
 two base classes: \texttt{AtmosphereModelReader} and
-\texttt{CoolingModelReader};} (2)~photometric fitter
-\textcolor{red}{(\texttt{WDFitter} class)}, that solves for
+\texttt{CoolingModelReader}; (2)~photometric fitter
+(\texttt{WDFitter} class), that solves for
 the WD parameters based on the photometry, with or without distance and
 reddening; and (3)~to generate white dwarf luminosity function in
 bolometric magnitudes or in any of the photometric systems available from the
-atmosphere models \textcolor{red}{(with the \texttt{WDLF} class)}.
+atmosphere models (with the \texttt{WDLF} class).
 
 We host our source code on Github\footnote{\url{https://github.com/cylammarco/WDPhotTools}},
 which provides version control and other utilities to facilitate the
@@ -264,7 +263,7 @@ automation with Github Actions upon each commit for:
     \item generating test coverage report with Coveralls\footnote{\url{
     https://coveralls.io/github/cylammarco/WDPhotTools}}
     which identifies
-    lines in the script that are missed \textcolor{red}{by} the tests;
+    lines in the script that are missed by the tests;
     \item Continuous Deployment (CD) through \textsc{PyPI} that allows
     immediate availability of the latest software release; and
     \item generating application programming interface~(API) documentation
@@ -274,14 +273,14 @@ automation with Github Actions upon each commit for:
 
 The following is not serving as an API, it is describing some of the key
 arguments and parameters, as well as the usage that may seem convoluted but
-\textcolor{red}{is} necessary to keep the structure simple without providing
+is necessary to keep the structure simple without providing
 multiple methods to perform similar tasks with small adjustments. The
 model-readers are designed to read the files as they are downloaded from the
 source, such that the future updates of the models provided by the same research
 group should be a straightforward process in extending the model list.
-\textcolor{red}{The materials that have gone into the classes and modules are
+The materials that have gone into the classes and modules are
 described in \textsection3 to \textsection6 alongside with the usage of those
-classes and modules.} We summarise this work in \textsection7.
+classes and modules. We summarise this work in \textsection7.
 
 \section{Formatters}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -292,14 +291,14 @@ different providers.
 
 \subsection*{Synthetic Photometry}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\textcolor{red}{The publicly available Montreal models\footnote{\url{https://www.astro.umontreal.ca/~bergeron/CoolingModels/}},
-with synthetic photometry of WDs over a smooth grid of wide ranges of temperature
-and surface gravity.} The tables are provided with bolometric and absolute
+The publicly available Montreal models\footnote{\url{https://www.astro.umontreal.ca/~bergeron/CoolingModels/}},
+provide synthetic photometry of WDs over a smooth grid of wide ranges of temperature
+and surface gravity. The tables are provided with bolometric and absolute
 magnitudes on various photometric systems in pure hydrogen~(DA) and pure-helium~(DB)
-\textcolor{red}{atmospheres have} in the range of $\log(g)=7.0 - 9.0$, as well as
+atmospheres and in the range of $\log(g)=7.0 - 9.0$, as well as
 the effective temperature and total cooling time~(though this grid is sparse
-compared to their complementary cooling model grids). \textcolor{red}{The
-photometric systems} include the Johnson-Kron-Cousins~($U, B, V, R\,\&\,I$),
+compared to their complementary cooling model grids). The
+photometric systems include the Johnson-Kron-Cousins~($U, B, V, R\,\&\,I$),
 Two Micron All Sky Survey~(2MASS) $J, H\,\&\,K_{s}$, Mauna Kea Observatory~(MKO)
 $Y, J, H\,\&\,K$, Wide-field Infrared Survey Explorer~(WISE) $W1, W2, W3\,\&\,W4$,
 Spitzer Space Telescope Infrared Array Camera~(IRAC)
@@ -312,8 +311,8 @@ Explorer~(GALEX) $FUV$ and $NUV$.
 The stellar masses and cooling ages are based on the latest generation of
 evolution sequences~\citep{2020ApJ...901...93B} with the choices of
 thick~($q_H \equiv \frac{\mathcal{M}_H}{\mathcal{M}*} = 10^{-4}$) and thin~($q_H = 10^{-10}$)
-hydrogen layers \textcolor{red}{that are referred to as the pure-hydrogen and
-pure-helium model atmospheres, respectively.} Details of the colour calculations
+hydrogen layers that are referred to as the pure-hydrogen and
+pure-helium model atmospheres, respectively. Details of the colour calculations
 are described in \citet{1995PASP..107.1047B} and \citet{2006AJ....132.1221H}.
 The DA grid covers a temperature range $T_{\mathrm{eff}} = 2\,500 - 150\,000$\,K
 while the DB grid covers $T_{\mathrm{eff}} = 3\,250 - 150\,000$\,K. Both model
@@ -327,27 +326,28 @@ This class takes care of the formatting of the models. As compared to the
 cooling model reader, this is a simple reader because only the DA and DB
 atmosphere types in the same output format are available for a wide range of
 parameters and in various commonly used broadband filters. After initialisation,
-the method \verb+list_atmosphere_parameters()+ can be used to retrieve the
-parameters available for interpolation with \verb+interp_am()+. By default, it
+the method \texttt{list\_atmosphere\_parameters()} can be used to retrieve the
+parameters available for interpolation with \texttt{interp\_am()}. By default, it
 is initialised as a DA atmosphere interpolator providing the interpolated $G$
 band magnitudes in the Gaia DR3 photometric system~(dependent), parameterised
-in \verb+logg+ and \verb+Mbol+~(independent). We name the arguments dependent
+in \texttt{logg} and \texttt{Mbol}~(independent). We name the arguments dependent
 and independent using the common terminology in mathematical modelling and
 experimental science: the variables defining the axes of the interpolation are
 the \textit{independent} variables, and the variable being interpolated over
 is the \textit{dependent} variable. The number of independent variables can be
-one or two. In the former, the argument \verb+logg+ has to be provided which
+one or two. In the former, the argument \texttt{logg} has to be provided which
 is defaulted to $8.0$. There are two choices of interpolator:
-\verb+scipy.interpolate.CloughTocher2DInterpolator()+ and 
-\verb+scipy.interpolate.RBFInterpolator()+. The former is faster but it is less
-stable at the grid boundaries, \textcolor{red}{and} it also does not \textcolor{red}{natively} support extrapolation. The
+\texttt{scipy.interpolate.CloughTocher2DInterpolator()} and 
+\texttt{scipy.interpolate.RBFInterpolator()}. The former is faster but it is less
+stable at the grid boundaries, and it also does not
+natively support extrapolation. The
 latter is slower\footnote{This method is available since \textsc{scipy}
 version 1.7, however, we strongly recommend using version 1.9 or above where
-there is a significant performance gain in the \verb+RBFInterpolator+.} but it is more
+there is a significant performance gain in the \texttt{RBFInterpolator}.} but it is more
 stable against irregularly sampled data as well as at the boundaries. It also
 supports extrapolation natively. The choice depends on the usage. The
-default is choosing \textcolor{red}{\verb+CloughTocher2DInterpolator+ because
-it would be usable with older distribution of \texttt{scipy}}. Fine control
+default is choosing \texttt{CloughTocher2DInterpolator} because
+it would be usable with older distribution of \textsc{scipy}. Fine control
 of the interpolator can be performed using keyword arguments. The cooling
 tracks on a colour-magnitude diagram are shown for the Montreal DA model
 in Figure~\ref{fig:cooling_tracks_default}.
@@ -363,20 +363,20 @@ in Figure~\ref{fig:cooling_tracks_default}.
 
 \subsection{Class: \texttt{CoolingModelReader}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-The reader for the \textcolor{red}{24 cooling models from sixteen pieces of work}
-is a little bit more complex because the outputs from different models are
+The reader for the 24 cooling models from sixteen pieces of work
+is more complex because the outputs from different models are
 organised differently. These are all handled in the background and users only
-need to choose among the models. Similar to the \verb+AtmosphereModelReader+,
-after initialisation, the method \verb+list_cooling_model()+ can be used to
+need to choose among the models. Similar to the \texttt{AtmosphereModelReader},
+after initialisation, the method \texttt{list\_cooling\_model()} can be used to
 retrieve the available models and then the parameters available for
 interpolation from those models can be retrieved using
-\verb+list_cooling_parameters()+. With the chosen model name and parameter
-names, an interpolator can be built using the method \verb+interp_cm()+, which
+\texttt{list\_cooling\_parameters()}. With the chosen model name and parameter
+names, an interpolator can be built using the method \texttt{interp\_cm()}, which
 will use the appropriate formatter to read the model files already contained in
 the package. In this class, the same two interpolators,
-\verb+scipy.interpolator.CloughTocher2DInterpolator()+ and
-\verb+scipy.interpolate.RBFInterpolator()+, are available for use. See
-\textcolor{red}{Table~\ref{tab:cooling_models}} for the complete listing of the
+\texttt{scipy.interpolator.CloughTocher2DInterpolator()} and
+\texttt{scipy.interpolate.RBFInterpolator()}, are available for use. See
+Table~\ref{tab:cooling_models} for the complete listing of the
 available models.
 
 \section{Photometric fitting}
@@ -385,107 +385,90 @@ Photometric fitting with synthetic broadband photometry has been the common
 practice in getting the first guess of the atmospheric properties of white
 dwarf candidates, or any unknown astronomical source. Photometry from multiple
 filters and parallactic measurements can improve on the fitting accuracy.
-\textcolor{red}{It may seem to become obsolete in the era of Gaia as most white
+It may seem to become obsolete in the era of Gaia as most white
 dwarfs have measured parallaxes. However, the faint targets with respect to any
 survey are always going to remain a challenge as the uncertainties in all the
 observables are going to be significant. Hence, photometric fitting will
 continue to serve as a useful method in the future. Once VRO starts producing
-WD candidates at faint magnitudes, they would be way beyond the capabilities
-of most spectrographs, for the few mounted on 10\,m$+$ telescopes, it is a
+WD candidates at faint magnitudes, they would be far beyond the capabilities
+of most spectrographs. The few spectrographs mounted on 10\,m$+$ telescopes are a
 rare resource for follow-up and it would be not possible to obtain spectra
-to confirm a sizeable sample of WD candidates. Then, we will have to rely mostly
-on photometric method again, and without any parallactic measurement.}
+to confirm a sizeable sample of WD candidates. We will have to rely mostly
+on photometric method again, and without any parallactic measurements.
 
 \subsection{Class: \texttt{WDFitter}}
 \label{sec:wdfitter}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-This class inherits from the \verb+AtmosphereModelReader+. For basic usage,
+This class inherits from the \texttt{AtmosphereModelReader}. For basic usage,
 users are only required to provide the atmospheric type(s), the magnitudes and
 uncertainties in the respective filters. For more advanced usage, other
 fine-tuning can be performed by providing distance, extinction, independent
-variables\footnote{fitting using \texttt{Mbol} and \texttt{Teff} can give slightly
+variables\footnote{Fitting using \texttt{Mbol} and \texttt{Teff} can give slightly
 different results due to interpolation.}, choice of interpolator and their
 fine-tuning parameters, minimisers and their fine-tuning parameters,
-solution refinement within a bounding box~(only if \verb+emcee+ was used).
+or solution refinement within a bounding box~(only if \textsc{emcee} was used).
 A few arguments are worth extra attention because of the similar terms used
-by different methods\textcolor{red}{. We} are only pointing out the potential confusion with
+by different methods. We are only pointing out the potential confusion with
 the arguments, the detailed usage should be referred to the API document
 itself:
 \begin{enumerate}
-    \item The argument \verb+extinction_convolved+ refers to the use of
+    \item The argument \texttt{extinction\_convolved} refers to the use of
     tabulated values from convolving the filter response function with DA
     spectra to compute the extinction corrected for the spectral shape
-    \textcolor{red}{(see also Section~\textsection4.3 and
-    Figure~\ref{fig:interstellar_reddening})}
-    When it is set to \verb+False+, it interpolates the tabulated values
-    from \citet{2011ApJ...737..103S}.
-    \item \verb+kind+ is the kind of interpolation for the extinction.
-    \item \verb+logg+ is used \textit{if only} one independent variable is
+    (see also Section~\textsection4.3 and Figure~\ref{fig:interstellar_reddening})
+    When it is set to \texttt{False}, it interpolates the tabulated values
+    from the Appendix of \citet{2011ApJ...737..103S}.
+    \item \texttt{kind} is the kind of interpolation for the extinction.
+    \item \texttt{logg} is used \textit{if only} one independent variable is
     provided.
-    \item \verb+method+ sets the choice from the 3 minimizers.
+    \item \texttt{method} sets the choice from the 3 minimizers.
     \item There are 5 keyword arguments that can be used to
-    \textcolor{red}{perform} fine control over the minimizer and
-    interpolator: \verb+kwargs_for_RBF+, \verb+kwargs_for_CT+,
-    \verb+kwargs_for_minimize+, \verb+kwargs_for_least_squares+ and
-    \verb+kwargs_for_emcee+.
+    perform fine control over the minimizer and
+    interpolator: \texttt{kwargs\_for\_RBF}, \texttt{kwargs\_for\_CT},
+    \texttt{kwargs\_for\_minimize}, \texttt{kwargs\_for\_least\_squares} and
+    \texttt{kwargs\_for\_emcee}.
 \end{enumerate}
 
 This class also comes with two diagnostic plots. The first one,
-\verb+show_best_fit()+ overplots the best fit photometry corrected for the
+\texttt{show\_best\_fit()} overplots the best fit photometry corrected for the
 (fitted) distance (and reddening) with the observed
-data. The second one, \verb+show_corner_plot()+,
+data. The second one, \texttt{show\_corner\_plot()},
 shows the probability distribution functions from the MCMC
-sampling~\ref{fig:best_fit} which shows the differences when the distance
-is provided or not. It is clear from the fit that if the distance is not
-provided, the temperature can still be recovered reasonably well because
-the SED only changes significantly with distance unless the interstellar
-reddening is very strong. This statement only holds under the assumption
-that the WD atmosphere type is typical, photometry is of good quality and
-a good number of filters are provided.
+sampling~\ref{fig:best_fit}.
 
-% toggle for referee mode
-%\begin{figure}
-%    \centering
-%    \includegraphics[width=0.75\columnwidth]{PSOJ1801p6254_emcee.png}
-%    \includegraphics[width=0.75\columnwidth]{PSOJ1801p6254_emcee_corner.png}
-%    \caption{Best fit DA solutions found using MCMC with \texttt{emcee} and the associated corner plot of the
-%    sampling for PSO\,J1801+6254~\citep[][they found a spectroscopic of T$_\mathrm{eff}=3550$\,K]{2020MNRAS.493.6001L}.}
-%    \label{fig:best_fit}
-%\end{figure}
 \begin{figure}
     \centering
     \includegraphics[width=\columnwidth]{fig_02_PSOJ1801p6254_emcee.png}
     \includegraphics[width=\columnwidth]{fig_02_PSOJ1801p6254_emcee_corner.png}
-    \caption{Best fit DA solutions found using MCMC with \texttt{emcee} and the associated corner plot of the
+    \caption{Best fit DA solutions found using MCMC with \textsc{emcee} and the associated corner plot of the
     sampling for PSO\,J1801+6254~\citep[][they found a spectroscopic of T$_\mathrm{eff}=3550$\,K]{2020MNRAS.493.6001L}.}
     \label{fig:best_fit}
 \end{figure}
 
 Photometric fitting can be performed by minimizing the $\chi^2$ with any method
-supported by \verb+scipy.optimize.minimize()+,
-\verb+scipy.optimize.least_squares()+ or with a Markov chain Monte
+supported by \texttt{scipy.optimize.minimize()},
+\texttt{scipy.optimize.least\_squares()} or with a Markov chain Monte
 Carlo method powered by \texttt{emcee}~\citep{2013PASP..125..306F} with the
-option to refine the solution with \verb+minimize()+ at the end using the
+option to refine the solution with \texttt{minimize()} at the end using the
 50$^{\mathrm{th}}$-percentile as the initial guess and bounding the fit
-within N-sigmas uncertainty limit (user-defined). \textcolor{red}{The
-uncertainties are not computed when using the `minimize()` moethod, while
+within N-sigmas uncertainty limit (user-defined). The
+uncertainties are not computed when using the {\texttt{minimize()}} method, while
 the latter two do estimate the uncertainty as part of the minimisation
 procedure. At high temperatures ($T_{\mathrm{eff}} \geq 11\,000$\,K), the
 differences in mass inferred from pure H or pure He models are of the order
 of $\sim$\,$0.1\,\msun$. However, the differences between the pure He and
 mixed H/He solutions in the same temperature range are completely negligible.
-At lower temperatures, the atmospheric \textcolor{red}{compositions} have
-much stronger effects. The average mass of a population drops when fitted
-with pure H model, pure He, and then to mixed H/He models. The
-\textcolor{red}{above-average-mass} WDs in the $6\,000\,-10\,000$\,K
-temperature range \textcolor{red}{have} an average mass above $0.7\,\msun$
-under the assumption of pure hydrogen atmospheres, but this drops to
-$\sim$\,$0.6\,\msun$ when fitted with mixed
-H/He models~\citep{2019ApJ...876...67B}. Below $\sim$\,$6000$\,K,} optical
+At lower temperatures, the atmospheric compositions have much stronger effects.
+When fitted with pure He models, the average mass of a population decreases;
+the average mass decreases further when fitted with the mixed H/He models. The
+above-average-mass WDs in the temperature range of $6\,000\,-10\,000$\,K
+have an average mass above $0.7\,\msun$ when fitted with pure hydrogen model,
+but this drops to $\sim$\,$0.6\,\msun$ when fitted with mixed
+H/He models~\citep{2019ApJ...876...67B}. Below $\sim$\,$6\,000$\,K, optical
 spectra are not particularly useful in distinguishing the atmosphere
-type, because below $\sim$\,$5000$\,K, \textcolor{red}{hydrogen} absorption
-lines start to disappear, while the \textcolor{red}{helium lines disappear
-even earlier at $\sim$\,$9000$\,K~\citep{2018ApJ...857...56R}.} However, the
+type, because hydrogen absorption lines \textit{start} to disappear, while the
+helium lines disappear
+as early as at $\sim$\,$9\,000$\,K~\citep{2018ApJ...857...56R}. However, the
 broad spectral features, namely the collisionally induced absorption, in the
 infrared can distinguish the atmosphere type~(see Figure~12 of
 \citealt{2017ApJ...848...36B}). Therefore, readers are reminded to pay
@@ -493,40 +476,39 @@ particular care when you arrive at a low temperature solution with only
 optical data.
 
 With $n$ observables, it is only possible to fit for $n-1$ variables. If there
-are only two photometric bands, \textcolor{red}{it is only possible to fit
+are only two photometric bands, it is only possible to fit
 for one parameter if the \textit{distance is unknown}. By combining 2-band
-photometry with a distance, there is enough degree of freedom to fit two
-parameters.}
+photometry \textit{with a distance}, there is enough degree of freedom to fit two
+parameters.
 
 This does not apply to fitting with or without interstellar reddening because
-it is merely a one-to-one lookup value, \textcolor{red}{which itself} is
+it is merely a one-to-one lookup value, which itself is
 only a function of distance. When studying a population of WDs that are fitted
 for the distance, we should compare the photometric distance to the distances
 measured from other means, e.g. astrometry, spectroscopic distance etc. in order
-to assess the bias in the fit~(e.g. Section \textsection3.2.2
+to assess the bias in the fit~(e.g.\ Section~\textsection3.2.2
 in \citealt{2011MNRAS.417...93R}).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 The effective temperature (and absolute bolometric magnitude) and the solid
 angle of a source can be obtained when the distance is known, through the
 relation $\Omega = \pi R^2 / D^2$. In the era of
-Gaia~\citep{2021A&A...649A...1G}, most \textcolor{red}{WD candidates} have
+Gaia~\citep{2021A&A...649A...1G}, most WD candidates have
 their parallaxes measured, and hence the distances
 derived~\citep{2021AJ....161..147B}. This allows much more reliable photometric
 fitting with broadband photometry alone, as compared to fitting with an assumed
 surface gravity~(see below). By using an evolutionary model of WDs, the radius
 and the effective temperature can be used to obtain the mass~(and surface
-gravity). \textcolor{red}{We do not provide a means to use an alternative
+gravity). We do not provide a means to use an alternative
 mass-radius relation of white dwarfs. The fitting is only performed using the
-relation already adopted in the tables of synthetic photometry.}
+relation already adopted in the tables of synthetic photometry.
 
 Even though this is known as the photometric fitting, and values are almost
 exclusively reported in magnitude, the measurement of the apparent brightness
 is ultimately performed in electron counts. With good calibration and detector
 linearity behaviour, it is sufficiently accurate to treat the uncertainties
 at the flux level. The uncertainty in flux measured has a Gaussian-like error
-that is symmetrical to both over- and under-estimation of the flux. Unlike
-with magnitudes, which are in the logarithmic space of the flux, the
+that is symmetrical to both over- and under-estimation of the flux. However, because magnitudes are in the logarithmic space of the flux, the
 uncertainty in magnitude is no longer symmetrical about the ``central'' value.
 Thus fitting directly with magnitude weighted by the magnitude uncertainty
 leads to a bias: solutions are biased to be over-luminous. For example, at
@@ -536,7 +518,7 @@ and bright end. This only narrows down to $(-)0.917\%$ and $(+)0.925\%$ at
 $\pm0.01\,$mag level\footnote{A negative change in the magnitude corresponds
 to an increase in flux.}. This effect becomes visually obvious if one is to
 perform an MCMC sampling and inspect the probability distribution functions.
-For this reason, in \verb+WDPhotTools+, we fit in flux-space where the linear
+For this reason, in \textsc{WDPhotTools}, we fit in flux-space where the linear
 and symmetrical approximation of the uncertainty distribution is more
 realistic.
 
@@ -550,7 +532,7 @@ and the choice of the interpolators as follows.
 
 \subsection{Mathematical Construction}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-We provide three means of fitting\textcolor{red}{. The} first two are both finding the minimum
+We provide three means of fitting. The first two are both finding the minimum
 $\chi^2$, with different minimizers. In the following equations, we use $m$ and
 $f$ to denote apparent magnitude and flux; and $M$ and $F$ to denote absolute
 magnitude and flux. The function to be minimized in these two cases is the
@@ -576,13 +558,13 @@ and
     \sigma_{M}^{2} = \left( \dfrac{\partial M}{\partial m} \sigma_{m} \right)^2 + \left( \dfrac{\partial M}{\partial D} \sigma_{D} \right)^2
 \end{equation}
 where $D$ and $\sigma_D$ are the distance and the corresponding uncertainty. By
-applying the distance-magnitude relation $M = m - 5\textcolor{red}{\log_{10}}(D)$, it simplifies to
+applying the distance-magnitude relation $M = m - 5\log_{10}(D)$, it simplifies to
 \begin{equation}
     \label{eq:mag_err}
     \sigma_{M}^2 = \sigma^2_{m} + \left[ \dfrac{5}{\ln(10)} \right]^2 \left(\dfrac{\sigma_{D}}{D}\right)^2.
 \end{equation}
 Substituting in also the flux-magnitude relation, using the parametrisation
-independent of the response of the photometric system: $m - m_{\mathrm{ZP}}=-2.5\textcolor{red}{\log_{10}}(F/F_{\mathrm{ZP}})$,
+independent of the response of the photometric system: $m - m_{\mathrm{ZP}}=-2.5\log_{10}(F/F_{\mathrm{ZP}})$,
 we arrive at the $\chi^2$ function to be minimized in the magnitude space weighted
 by the formally propagated uncertainties:
 \begin{equation}
@@ -591,7 +573,7 @@ by the formally propagated uncertainties:
 \end{equation}
 
 The third method we provide is to sample the parameter space with an Markov chain
-Monte Carlo method. This method more useful in the case when the uncertainties
+Monte Carlo method. This method is more useful in the case when the uncertainties
 are large or with missing distance. The likelihood that has to be maximised takes
 a similar form to Equation~\ref{eq:chi2}:
 \begin{multline}
@@ -607,13 +589,12 @@ a similar form to Equation~\ref{eq:chi2}:
 When interstellar reddening is included in the calculation, the $\chi^2$
 minimisation function becomes
 \begin{multline}
-    \label{eq:chi2}
-    \chi^{2} = \left[\dfrac{2.5}{\ln(10)}\right]^2 \times \sum_{i}\left\{ \dfrac{1}{\sigma_{M, i}^2} \left[ \left(\dfrac{10}{D}\right)^{2} \times \\ 10^{\frac{m_{i} - M_{\mathrm{model}, i} - A_{i}(D)}{2.5}} - 1 \right]^2 \right\}
+    \chi^{2} = \left[\dfrac{2.5}{\ln(10)}\right]^2 \times  \\
+    \sum_{i}\left\{ \dfrac{1}{\sigma_{M, i}^2} \left[ \left(\dfrac{10}{D}\right)^{2} \times 10^{\frac{m_{i} - M_{\mathrm{model}, i} - A_{i}(D)}{2.5}} - 1 \right]^2 \right\}
 \end{multline}
 
 and the likelihood function to be maximised becomes
 \begin{multline}
-    \label{eq:likelihood}
     \mathcal{L} = -\dfrac{1}{2} \left[\dfrac{2.5}{\ln(10)}\right]^2 \times \\ \sum_{i} \left\{ 
     \dfrac{1}{\sigma_{M, i}^2} \left[ \left(\dfrac{10}{D}\right)^{2} \times  10^{\frac{m_{i} - M_{\mathrm{model}, i} - A_{i}(D)}{2.5}} - 1 \right]^2
     + \ln(2\pi\sigma_i^2) \right\}.
@@ -631,53 +612,53 @@ PS1 $grizy$, LSST $ugrizy$, DES $grizY$ and WFC3 $F218W, F225W$ and $F275W$.
 We note that LSST is now renamed Simonyi Survey Telescope, at the Vera Rubin
 Observatory, but it was printed under the former designation in the referenced
 article.} available in Table~6 of \citet{2011ApJ...737..103S}; and (2) by
-treatment the spectral energy distribution functions more properly, we convolve
+treating the spectral energy distribution functions more properly, we convolve
 the respective filter functions with all the DA
 models~\citep{2009ApJ...696.1755T, 2010MmSAI..81..921K} available at the
 Spanish Virtual
 Observatory\footnote{\url{http://svo2.cab.inta-csic.es/theory/main/}} following
-the instructions  \textcolor{red}{using equation A1 in the Appendix of} \citet[][SF11]{2011ApJ...737..103S}. We have pre-computed the
-\textcolor{red}{reddening per unit E(B-V)} from $Rv = 2.1$ to $5.1$ in $0.5$ step increment, using the
-Fitzpatrick extinction law~\citep{1999PASP..111...63F} \textcolor{red}{with the
+the instructions using equation A1 in the Appendix of \citet[][SF11]{2011ApJ...737..103S}. We have pre-computed the
+reddening per unit E(B-V) from $Rv = 2.1$ to $5.1$ in $0.5$ step increment, using the
+Fitzpatrick extinction law~\citep{1999PASP..111...63F} with the
 \texttt{extinction}\footnote{\url{https://github.com/kbarbary/extinction}}
 package~\citep{2016zndo....804967B}, for every theoretical
 spectrum available over all the filters available from the Montreal synthetic
-photometry table (see Figure~\ref{fig:interstellar_reddening})}.
-\textcolor{red}{In other words, we have a third (effective temperature) and a forth (surface gravity) dimension
-of Table 6 in SF11. Our values are making use of WD spectra instead of using a single spectrum of an MS star at 7000\,K in SF11, which is intended to be a good set of average values for general use.}
+photometry table (see Figure~\ref{fig:interstellar_reddening}).
+In other words, we have a third (effective temperature) and a fourth (surface gravity) dimension
+of Table 6 in SF11. Our values are making use of WD spectra instead of using a single spectrum of an MS star with $\log(Z) = -1.0$, and $\log(g) = 4.5$ at $7\,000$\,K in SF11.
 The synthetic
 spectra do not cover some of the bluest filters, in such cases, we extend
 those spectra with blackbody profiles. The grid is stored in CSV format and
 is ready to be interpolated upon initialisation of this toolkit.
 
-\begin{figure}
+\begin{figure*}
     \centering
-    \includegraphics[width=\columnwidth]{fig_12_reddening_filter.png}
-    \caption{\textcolor{red}{\textit{Top}: The grey, dark-grey and black
+    \includegraphics[width=\textwidth]{fig_03_reddening_filter.png}
+    \caption{\textit{Top}: The grey, dark-grey and black
     lines white dwarf spectra at
-    T$_{\mathrm{eff}}=5000, 10000, \mathrm{\ and\ } 30000$\,K. The solid
+    T$_{\mathrm{eff}}=5\,000, 10\,000, \mathrm{\ and\ } 30\,000$\,K. The solid
     coloured lines (with the rainbow hue sorted by the effective wavelengths)
     are the filter response function. All of filters are normalised
     independently. The purple dotted line is the Fitzpatrick extinction law.
     \textit{Bottom}: The black crosses are the pre-computed values
-    from~\citet{2011ApJ...737..103S} using a synthetic spectrum of a 7000\,K,
-    $\log(Z) = -1$, and $\log(g) = 4.5$ star. The scattered points are
+    from~\citet{2011ApJ...737..103S} using a synthetic spectrum of a $7\,000$\,K,
+    $\log(Z) = -1.0$, and $\log(g) = 4.5$ star. The scattered points are
     extinction values obtained by convolving each of the filter profiles with
     the extinction curve and spectra. The shade of each colour follows the
     same shade as the temperature shading used in the upper plot: light shade
-    is at 5000\,K, medium shade is at 10000\,K and the darkest shade is at
-    30000\,K. It is clear that when using Gaia filters, which are very broad,
+    is at $5\,000$\,K, medium shade is at $10\,000$\,K and the darkest shade is at
+    $30\,000$\,K. It is clear that when using Gaia filters, which are very broad,
     the difference in the extinction correct is non-negligible because the
     spectral energy distribution can vary significantly within the wavelength
-    range of these filters.}}
+    range of these filters.}
     \label{fig:interstellar_reddening}
-\end{figure}
+\end{figure*}
 
 \subsection{Fitting Distance}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Singly evolved WDs \textcolor{red}{have a surface gravity distribution that
-strongly peaks at $\left<\textcolor{red}{\log_{10}}(g)\right> = 7.998 \pm 0.011$,
-as was found empirically} in the DA sample in SDSS DR16~\citep{2021MNRAS.507.4646K},
+Singly evolved WDs have a surface gravity distribution that
+strongly peaks at $\left<\log_{10}(g)\right> = 7.998 \pm 0.011$,
+as was found empirically in the DA sample in SDSS DR16~\citep{2021MNRAS.507.4646K},
 corresponding to a mean mass of $\left<\mathcal{M}_i\right> = 0.618 \pm 0.006 \msun$.
 When studying a large sample of WDs,
 fitting the photometric distances for the study of a population is still
@@ -686,73 +667,72 @@ distributions of the solution are, however, mostly statistical noise and not
 representative to the true distribution when both the strongly degenerate
 parameters: surface gravity and distance are fitted simultaneous. Equation
 \ref{eq:lsq} and \ref{eq:likelihood} are reused in this case, however, the
-distance modulus, which is a function of distance, \textcolor{red}{becomes}
+distance modulus, which is a function of distance, becomes
 a free parameter to be fitted.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Comparison against EDR3 catalogue of WDs}
 \label{sec:gf21_comparison}
 The catalogue available from GF21 has presented an excellent sample of WDs for
-comparison \textcolor{red}{to validate our photometric fitting. There is a
+comparison to validate our photometric fitting. There is a
 slight difference between our photometric fitting methodology and that of GF21:
 in this work, we are correcting for the interstellar reddening at the
-instantaneous temperature and surface gravity} in each iteration of the fit,
+instantaneous temperature and surface gravity in each iteration of the fit,
 as opposed to using a global average of the extinction per
 filter~($A_{G}=0.835A_{V}$, $A_{G_{\mathrm{BP}}}=0.6496A_{V}$, and
-$A_{G_{\mathrm{RP}}}=1.13894A_{V}$). \textcolor{red}{The underlying models
+$A_{G_{\mathrm{RP}}}=1.13894A_{V}$). The underlying models
 also differ slightly as the code base diverged slightly with
 time\footnote{\url{https://www.astro.umontreal.ca/~bergeron/CoolingModels/}
-and \url{https://warwick.ac.uk/fac/sci/physics/research/astro/people/tremblay/modelgrids}}}.
+and \url{https://warwick.ac.uk/fac/sci/physics/research/astro/people/tremblay/modelgrids}}.
 
-\textcolor{red}{
 As the spectral energy distribution function changes in the flux density
 within the broadband filter, the total extinctions of a hotter object are
 large because of more bluer photons are being extincted compared to a cooler
 object. This is measureable within the wavelength range of a broadband filter.
-The effect is small but not negligible\footnote{\textcolor{red}{This effect
+The effect is small but not negligible\footnote{This effect
 becomes even more important when the distance is a free-parameter to be fitted.
 But it does not lead to degeneracy because the reddening is non-linear and
-the effect is unidirectional as a function of wavelength.}} (see also Section
+the effect is monotonic as a function of wavelength.} (see also Section
 \textsection~\ref{sec:interstellar_reddening} and \textsection~\ref{sec:utility}).
 It is clearly shown in Figure~\ref{fig:interstellar_reddening} that the
 differences in the extinction in the Gaia filters are much larger than
 those in the narrower UBVRI filters. The effect is also slightly
 stronger in the blue end because of the larger change in the spectral
-shape as temperature changes from 30000\,K to 5000\,K. Therefore, we
+shape as temperature changes from $30\,000$\,K to $5\,000$\,K. Therefore, we
 convolve the filter profile with the DA spectra to provide a table of
 pre-computed extinction coefficient as a function of temperature and
-surface gravity to allow more accurate reddening correction.}
+surface gravity to allow more accurate reddening correction.
 
-\textcolor{red}{For the above reasons}, some scatter is expected when the
+For the above reasons, some scatter is expected when the
 fitted values from the two works are compared against each other.
-Particularly among the hotter WDs, their \textcolor{red}{colours deviate}
+Particularly among the hotter WDs, their colours deviate
 much more from the global average than the average population
-\textcolor{red}{does}. Their blue spectral energy distribution should be more
-extincted than cooler WDs \textcolor{red}{($G_{\mathrm{BP}})$ has a much
-larger spread than $G_{\mathrm{RP}})$}. Otherwise, we follow as closely
-to their \textcolor{red}{analysis} method as possible: the solutions are
+does. Their blue spectral energy distribution should be more
+extincted than cooler WDs ($G_{\mathrm{BP}}$ has a much
+larger spread than $G_{\mathrm{RP}})$. Otherwise, we follow as closely
+to their analysis method as possible: the solutions are
 fitted with the three Gaia filters, distance, and reddening with using the
-\textcolor{red}{catalogued values} as provided from their work.
+catalogued values as provided from their work.
 The distribution of the fitted effective temperatures are aligned well with
 the identity line, the Pearson correlation coefficient of the fitted effective
-temperature (for all \textcolor{red}{WDs that have valid solutions fitted}
+temperature (for all WDs that have valid solutions fitted
 regardless of the quality of fit) is $0.95$ between this and GF21. We are
 only displaying fitted results above $3\,500$\,K, in line with the GF21
 criteria when publishing their catalogue.
 
 \begin{figure}
     \centering
-    \includegraphics[width=\columnwidth]{fig_03_compare_fusillo_edr3.png}
-    \caption{Comparison of the effective temperature fitting against GF21. The blue scattered points show all the fitted \textcolor{red}{temperatures} using our preferred reddening treatment adopting the interpolated reddening computed for each filter at each temperature available from the collection from \citet{2010MmSAI..81..921K}. The red points \textcolor{red}{compares} when the reddening is interpolated directly using the table from \citet{2011ApJ...737..103S} computed using a synthetic spectrum of a 7000\,K  $\log(Z) = -1$, and $\log(g) = 4.5$ star. The colour lines show the density of scattered points that cannot be resolved, each level of inter-contour space contains $5\%$ of the total data. \textcolor{red}{The identity line is plotted as a visual guide.} The contour lines appear skewed due to the use of log-axes.}
+    \includegraphics[width=\columnwidth]{fig_04_compare_fusillo_edr3.png}
+    \caption{Comparison of the effective temperature fitting against GF21. The blue scattered points show all the fitted temperatures using our preferred reddening treatment adopting the interpolated reddening computed for each filter at each temperature available from the collection from \citet{2010MmSAI..81..921K}. The red points compares when the reddening is interpolated directly using the table from \citet{2011ApJ...737..103S} computed using a synthetic spectrum of a $7\,000$\,K  $\log(Z) = -1$, and $\log(g) = 4.5$ star. The colour lines show the density of scattered points that cannot be resolved, each level of inter-contour space contains $5\%$ of the total data. The identity line is plotted as a visual guide. The contour lines appear skewed due to the use of log-axes.}
     \label{fig:comparison}
 \end{figure}
 
 
 \section{White Dwarf Luminosity Function}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\textcolor{red}{A WDLF is the number density of WD as a function of luminosity.
+A WDLF is the number density of WD as a function of luminosity.
 It is an evolving function with time, and it is a common tool for deriving the
-age of a stellar population.} Its shape and normalisation are determined
+age of a stellar population. Its shape and normalisation are determined
 from only a few parameters. \citet{1987ApJ...315L..77W} compared an observed 
 WDLF derived from the Luyten Half-Second~(LHS) catalogue with a theoretical
 WDLF to obtain an estimate of the age of the Galaxy for the first time with
@@ -769,15 +749,17 @@ populations~\citep{2011MNRAS.417...93R, 2017ASPC..509...25L}.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\textcolor{red}{The construction of a WDLF is intuitively}: stars were formed in
+he construction of a WDLF is intuitively: stars were formed in
 a distribution of mass~($\mathcal{M}_i$), described by the initial mass
-function~(IMF, $\phi$). Then, they spend their \textcolor{red}{
-lifetime~($t_{\mathrm{MS}}$) carrying out nuclear burning}, and the time they
+function~(IMF, $\phi$). Then, they spend their 
+lifetime~($t_{\mathrm{MS}}$) carrying out nuclear burning, and the time they
 spend depends mainly on their mass. Towards the end stage of stellar evolution
 stars shed most of the atmosphere, which is modelled by the initial-final mass
 relation~(IFMR, $\zeta$). Once they have become WDs, all that is left is to
 know how long it has been cooling~($t_{\mathrm{cool}}$) in order to reach the
-current luminosity. \textcolor{red}{However, to encompass all these physical
+current luminosity. 
+
+However, to encompass all these physical
 processes in an integral even with pre-computed look-up table, the construction
 of a theoretical WDLF is computationally expensive because of the large dynamic
 range of varies quantities over the total evolution time. An integrator has to
@@ -786,22 +768,25 @@ the pre-computed lookup tables has already significantly reduced the computation
 time. But the repeated calling of multiple interpolate objects inside an
 integral still requires a few minutes to compute a single WDLF~(at a magnitude
 resolution of $0.1$\,mag) using a single typical computer processor thread.
-Part of this work is to carefully interpolate and integrate over the model
-grids, because they are both susceptible to significant rounding errors given
-the huge dynamic ranges the variables cover.} For example, in the case of a
-simple starburst of \textcolor{red}{the order of }$10^6$\,yrs, it requires a
+We have carefully interpolated and integrated over the model grids, because
+they are both susceptible to significant rounding errors given
+the huge dynamic ranges the variables cover. However, users are reminded 
+that numerical issues may still arise; for example, in the case of a
+simple starburst with a duration of $10^6$\,yrs, it requires a
 relative error tolerance of $10^{-10}$ in order to integrate properly for an
-old population. \textcolor{red}{It is also known that binary WD mergers lead to
+old population. 
+
+It is also known that binary WD mergers lead to
 an underestimation of the age of the WDs, hence they lead to contribution of
 density at the ``wrong magnitude'' in a WDLF assumed to be attributed solely
 by singly evolved WDs~\citep{2020A&A...636A..31T}. Another limitation is that
 this work does not account for the WDs escaped from clusters and have since
 drifted into the few-hundred-pc of the solar neighbourhood~(e.g.\
-\citealt{2013ApJ...770..140Z,2022ApJ...926..132H, 2022ApJ...926L..24M}).}
+\citealt{2013ApJ...770..140Z,2022ApJ...926..132H, 2022ApJ...926L..24M}).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-The integral for a WDLF when parameterised with \textcolor{red}{bolometric
-magnitude~($M_\mathrm{bol}$, as opposed to luminosity)} can be written as
+The integral for a WDLF when parameterised with bolometric
+magnitude~($M_\mathrm{bol}$, as opposed to luminosity) can be written as
 
 \begin{equation}
     n(M_{\mathrm{bol}}) = \int_{\mathcal{M}_l}^{\mathcal{M}_u}
@@ -850,23 +835,23 @@ their effects on a WDLF will be explained in Subsection \textsection~5.2--5.6.
 \subsection{Class: \texttt{WDLF}}
 \label{sec:wdlf}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-This class inherits from the \verb+AtmosphereModelReader+ and the
-\verb+CoolingModelReader+.
+This class inherits from the \texttt{AtmosphereModelReader} and the
+\texttt{CoolingModelReader}.
 
 A \texttt{WDLF} object requires seven models for computation: (1)~Star
 Formation History~(SFH), (2)~Initial Mass Function~(IMF), (3)~Initial Final
 Mass Relation~(IFMR), (4)~total stellar evolution time model, and (5-7) low,
 intermediate and high mass WD cooling models.
-\textcolor{red}{A \texttt{WDLF} object comes with a method to produce}
+A \texttt{WDLF} object comes with a method to produce
 a diagnostic plot to inspect all the input models: the IMF, the SFH, the total
 stellar evolution time as a function of mass, the IFMR, and the cooling model
 in two formats: bolometric magnitude as a function of age, and the rate of
 change of the bolometric magnitude as a function of
-age~(Figure~\ref{fig:input_model} \textcolor{red}{is an example of this diagnostic plot}).
+age~(Figure~\ref{fig:input_model} is an example of this diagnostic plot).
 
 \begin{figure*}
     \centering
-    \includegraphics[width=\textwidth]{fig_07_input_model.png}
+    \includegraphics[width=\textwidth]{fig_08_input_model.png}
     \caption{Top left: Input initial mass function. Top right: Input star
     formation history. Middle left: Input MS lifetime model. Middle right:
     Input IFMR model. Bottom left: Input cooling model showing the absolute
@@ -876,98 +861,15 @@ age~(Figure~\ref{fig:input_model} \textcolor{red}{is an example of this diagnost
     \label{fig:input_model}
 \end{figure*}
 
-In the following comparisons, the default configuration uses the (1)~IMF
-from \citet{2003PASP..115..763C} for single stars, (2)~IFMR from
-\citet{2008MNRAS.387.1693C}, and (3)~cooling models from the Montreal group,
-and (4)~SFH is a starburst of $10^8$ starting at the labelled time.
-While comparing the theoretical WDLFs, we are altering one variable at a time.
+In the following comparisons, the default configuration uses the (1)~SFH with a
+starburst of $10^8$ starting at the labelled time, (2)~IMF
+from \citet{2003PASP..115..763C} for single stars, (3)~IFMR from
+\citet{2008MNRAS.387.1693C}, and (4)~cooling models from the Montreal group.
+While comparing the theoretical WDLFs in the following
+sections. We are altering one variable at a time in the comparisons.
 
-\textcolor{red}{\textit{The WDLFs in all the figures in this section are
-normalised at $10$\,mag to a log-number density of $0.0$.}}
-
-
-\subsection{Initial Mass Function (IMF)}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\textcolor{red}{The choice of any of the three built-in Galactic IMFs has little
-effect on the shape of the WDLF because they are identical above $1\,\msun$.
-They only diverge slightly when the mass is below that $1\,\msun$. This effect
-can appear in the bright end of a WDLF for old populations when the low mass
-stars star becoming WDs~(See Figure~\ref{fig:imfs} and
-\ref{fig:wdlf_compare_imf}). Apart from the three built-in IMF functions}, a
-callable function can be supplied as a manual IMF. \textcolor{red}{For
-example, if a user would like to explore the effect of a top heavy IMF, they
-would have to provide it manually}. This lists the four options that are
-available:
-
-\begin{enumerate}
-    \item K01: \citet{2001MNRAS.322..231K} is a three-part power law that only the
-    more massive two are of relevance to this work, with
-    $\xi(\mathcal{M}_i) = \mathcal{M}_i^{-\alpha}$ where
-    \begin{equation}
-        \alpha =
-        \begin{cases}
-            0.3, \quad \mathcal{M}_i \leq 0.08\,\msun\\
-            1.3, \quad 0.08 \leq \mathcal{M}_i \leq 0.5\,\msun\\
-            2.3, \quad \mathcal{M}_i \geq 0.5\,\msun.
-        \end{cases}
-    \end{equation}
-    \item C03: \citet{2003PASP..115..763C} shares the same power law with
-    \citet{2001MNRAS.322..231K} for mass above $1\,\msun$, \textcolor{below that},
-    the IMF follows a log-normal form with
-    \begin{equation}
-        \xi(\mathcal{M}_i) = \dfrac{0.158^{+0.051}_{-0.046}}{\mathcal{M}_i \ln(10)} \times
-            \exp{\left\{\dfrac{\left[\textcolor{red}{\log_{10}}(\mathcal{M}_i) - \textcolor{red}{\log_{10}}\left(0.079^{-0.016}_{+0.021}\right)\right]^2}{2 \times (0.69^{-0.01}_{+0.05})^2}\right\}}
-    \end{equation}
-    \item C03b: \citet[][including binary]{2003PASP..115..763C} also consider the correction for binaries which gives a much shallower IMF at the low mass end
-    \begin{equation}
-        \xi(\mathcal{M}_i) = \dfrac{0.086}{\mathcal{M}_i \ln(10)} \times
-            \exp{\left\{\dfrac{\left[\textcolor{red}{\log_{10}}(\mathcal{M}_i) - \textcolor{red}{\log_{10}}\left(0.022\right)\right]^2}{2 \times (0.57)^2}\right\}}
-    \end{equation}
-    \item \textcolor{red}{Manually provide} an interpolated function that returns the initial mass density as a list or an array (even if a single point is returned).
-\end{enumerate}
-
-
-\begin{figure}
-    \centering
-    \includegraphics[width=\columnwidth]{fig_04_imfs.png}
-    \caption{Comparing the three IMFs provided in this package. They are
-    identical in the mass range above $1\,\msun$, while under this mass
-    limit, the differences are small in the mass range ($\gtrapprox0.9\,\msun$)
-    that is relevant to singly evolved MS that had enough time to evolve into a
-    WD given the finite age of the Universe.}
-    \label{fig:imfs}
-\end{figure}
-
-There is a very weak dependency on the IMF because the three IMFs are only
-different at mass below $1\,\msun$, which has an MS lifetime of
-\textcolor{red}{$\sim11$\,Gyr for solar metallicity stars.} Hence, we only
-start to see a difference in the WDLF at ages above
-$11$\,Gyr~(Figure~\ref{fig:wdlf_compare_imf}). The IMFs only diverge
-\textcolor{red}{significantly} well into the M-dwarf/brown dwarf
-regime\textcolor{red}{. Even at} a computed age of $15$\,Gyr
-we are only including stars with ZAM masses as low as $\sim$ $0.96\,\msun$.
-Nevertheless, if a metal-poor MS lifetime model is used, this can change the
-picture slightly \textcolor{red}{as they are more short-lived}.
-
-% toggle for referee mode
-\begin{figure}
-    \centering
-    \includegraphics[width=0.8\columnwidth]{fig_09_wdlf_compare_imf.png}
-    \caption{The initial mass functions are identical above $1\,\msun$, only the
-    oldest populations show differences in the bright end of the WDLFs. Due to
-    almost identical computed WDLFs, only the differences of the WDLFs
-    relative to the C03 are shown.}
-    \label{fig:wdlf_compare_imf}
-\end{figure}
-%\begin{figure}
-%    \centering
-%    \includegraphics[width=\columnwidth]{wdlf_compare_imf.png}
-%    \caption{Comparing WDLFs with different input IMFs relative to the C03
-%    model. Due to the identical mass function above $1\,\msun$, only the
-%    oldest populations show differences in the bright end of the WDLFs.}
-%    \label{fig:wdlf_compare_imf}
-%\end{figure}
-
+\textit{The WDLFs in all the figures in this section are
+normalised at $10$\,mag to a log-number density of $0.0$.}
 
 \subsection{Star Formation History}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -981,7 +883,7 @@ due to crystallisation that releases a significant amount of heat. This bump
 is the most prominent in the starburst profile at $6$\,Gyr old because WDs
 with $\sim0.8-1.0\,\msun$ have the lowest cooling rates, they correspond
 to $3-5\msun$ ZAMS mass that spends $0.1-0.5$\,Gyr in the MS and $5-6$\,Gyr
-to reach $14.5$\,mag~($\sim 5500$\,K, \citealp{2019ApJ...876...67B}). The
+to reach $14.5$\,mag~($\sim 5\,500$\,K, \citealp{2019ApJ...876...67B}). The
 detailed description of the shape of the WDLFs due to various cooling
 mechanisms should be referred to Figure~5 and Section~3
 of \citealp{2001PASP..113..409F}. These WDLFs are only served to demonstrate
@@ -989,17 +891,9 @@ the effect of SFH on their shapes, they illustrate that the faint end
 of a WDLF is the most important and sensitive in revealing the past
 star formation history of a stellar population.
 
-% toggle for referee mode
-%\begin{figure}
-%    \centering
-%    \includegraphics[width=0.8\columnwidth]{fig_8_wdlf_compare_sfr.png}
-%    \caption{Comparing WDLFs with the three default types of star formation
-%    history from $2$ to $14\,$Gyr in increment of $2$\,Gyr.}
-%    \label{fig:compare_sfr_age_type}
-%\end{figure}
 \begin{figure}
     \centering
-    \includegraphics[width=\columnwidth]{fig_08_wdlf_compare_sfr.png}
+    \includegraphics[width=\columnwidth]{fig_09_wdlf_compare_sfr.png}
     \caption{Comparing WDLFs with the three default types of star formation
     history from $2$ to $14\,$Gyr in increment of $2$\,Gyr. Top: constant star
     formation since the labelled lookback time. Middle: a starburst in the 
@@ -1010,23 +904,22 @@ star formation history of a stellar population.
 \end{figure}
 
 The SFH has one of the strongest effects on the shape and normalisation of a
-WDLF. The default profiles are only three types of simple form SFH, however,
-an exponential decay profile with an appropriate decay coefficient should give a
-first good guess for a disk population, while a burst profile would be useful
-for studying open or globular clusters. All three profiles are controlled by
-a few simple parameters, and the fourth option is to provide a callable
-function of star formation rate as a function of lookback time:
+WDLF. We only provide three types of simple form SFH profiles. All of them are
+controlled by a few simple parameters, and the fourth option is to provide a
+callable function of star formation rate as a function of lookback time:
 (1)~\textit{Constant} profile depends only on the age of the population,
 i.e. the lookback time since the beginning of star formation,
 and \textbf{not} the time since the first WD was formed. (2)~\textit{Burst}
 profile which depends on the onset of star formation as well as the duration
-of a constant burst of star formation. (3)~An ~\textit{exponentially decaying}
+of a constant burst of star formation. It would be useful for studying open
+or globular clusters (3)~An ~\textit{exponentially decaying}
 profile that is governed by the onset of star formation, the decay coefficient
-and the duration of the star formation. By default, it continues to decay
+and the duration of the star formation. It should give a
+first good guess for a disk population. By default, it continues to decay
 indefinitely. (4)~A ~\textit{manually provided callable function} that can take
 any form, though users should be careful with the extrapolation setting,
-\textcolor{red}{a} smoothly extrapolated value or zero should be returned. In
-the case of \verb+NaN+ or $\pm$\vert+inf+ being returned, we set the value to zero.
+a smoothly extrapolated value or zero should be returned. In
+the case of \texttt{NaN} or $\pm$\texttt{inf} being returned, we set the value to zero.
 
 This is by far the single most important time-dependent variable when
 computing a WDLF. Deriving the SFH from a WDLF is one of the most important
@@ -1042,38 +935,112 @@ provided manually.
 
 
 
+\subsection{Initial Mass Function (IMF)}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+The choice of any of the three built-in Galactic IMFs has little
+effect on the shape of the WDLF because they are identical above $1\,\msun$.
+They only diverge slightly when the mass is below that $1\,\msun$. This effect
+can appear in the bright end of a WDLF for old populations when the low mass
+stars star becoming WDs~(See Figure~\ref{fig:imfs} and
+\ref{fig:wdlf_compare_imf}). Apart from the three built-in IMF functions, a
+callable function can be supplied as a manual IMF. For
+example, if a user would like to explore the effect of a top heavy IMF, they
+would have to provide it manually. This lists the four options that are
+available:
+
+\begin{enumerate}
+    \item K01: \citet{2001MNRAS.322..231K} is a three-part power law that only the
+    more massive two are of relevance to this work, with
+    $\xi(\mathcal{M}_i) = \mathcal{M}_i^{-\alpha}$ where
+    \begin{equation}
+        \alpha =
+        \begin{cases}
+            0.3, \quad \mathcal{M}_i \leq 0.08\,\msun\\
+            1.3, \quad 0.08 \leq \mathcal{M}_i \leq 0.5\,\msun\\
+            2.3, \quad \mathcal{M}_i \geq 0.5\,\msun.
+        \end{cases}
+    \end{equation}
+    \item C03: \citet{2003PASP..115..763C} shares the same power law with
+    \citet{2001MNRAS.322..231K} for mass above $1\,\msun$, while below that,
+    the IMF follows a log-normal form with
+    \begin{equation}
+        \xi(\mathcal{M}_i) = \dfrac{0.158^{+0.051}_{-0.046}}{\mathcal{M}_i \ln(10)} \times
+            \exp{\left\{\dfrac{\left[\log_{10}(\mathcal{M}_i) - \log_{10}\left(0.079^{-0.016}_{+0.021}\right)\right]^2}{2 \times (0.69^{-0.01}_{+0.05})^2}\right\}}
+    \end{equation}
+    \item C03b: \citet[][including binary]{2003PASP..115..763C} also consider the correction for binaries which gives a much shallower IMF at the low mass end
+    \begin{equation}
+        \xi(\mathcal{M}_i) = \dfrac{0.086}{\mathcal{M}_i \ln(10)} \times
+            \exp{\left\{\dfrac{\left[\log_{10}(\mathcal{M}_i) - \log_{10}\left(0.022\right)\right]^2}{2 \times (0.57)^2}\right\}}
+    \end{equation}
+    \item Manually provide an interpolated function that returns the initial mass density as a list or an array (even if a single point is returned).
+\end{enumerate}
+
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\columnwidth]{fig_05_imfs.png}
+    \caption{Comparing the three IMFs provided in this package. They are
+    identical in the mass range above $1\,\msun$, while under this mass
+    limit, the differences are small in the mass range ($\gtrapprox0.9\,\msun$)
+    that is relevant to singly evolved MS that had enough time to evolve into a
+    WD given the finite age of the Universe.}
+    \label{fig:imfs}
+\end{figure}
+
+There is a very weak dependency on the IMF because the three IMFs are only
+different at mass below $1\,\msun$, which has an MS lifetime of
+$\sim11$\,Gyr for solar metallicity stars. Hence, we only
+start to see a difference in the WDLF at ages above
+$11$\,Gyr~(Figure~\ref{fig:wdlf_compare_imf}). The IMFs only diverge
+significantly well into the M-dwarf/brown dwarf
+regime. Even at a computed age of $15$\,Gyr
+we are only including stars with ZAM masses as low as $\sim$ $0.96\,\msun$.
+Nevertheless, if a metal-poor MS lifetime model is used, this can change the
+picture slightly as they are more short-lived.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\columnwidth]{fig_10_wdlf_compare_imf.png}
+    \caption{The initial mass functions are identical above $1\,\msun$, only the
+    oldest populations show differences in the bright end of the WDLFs. Due to
+    almost identical computed WDLFs, only the differences of the WDLFs
+    relative to the C03 are shown.}
+    \label{fig:wdlf_compare_imf}
+\end{figure}
+
+
 \subsection{Initial-Final Mass Relations}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 In Fig.~\ref{fig:wdlf_compare_ifmr}, the WDLFs in the range of $9$--$14$\,mag
 line up almost perfectly at any age. This is because WDs with a `typical mass'
-does not have strong mass-dependent physical phenomenon that affects the WD
+do not have strong mass-dependent physical phenomenon that affects the WD
 evolution. They all cool at roughly the same rate across the mass range of the
 models. However, the difference is still measurable and obvious by eye when
 the systems have sufficient time to evolve and for the WDs to cool. In 
 Figure~\ref{fig:wdlf_compare_ifmr}, the $5$\,Gyr comparison plot is exhibiting
-the dip in the EB18 IFMR just above $5\,\msun$ at $14.5$\,mag. \textcolor{red}{Meanwhile} the strong
+the dip in the EB18 IFMR just above $5\,\msun$ at $14.5$\,mag. Meanwhile the strong
 feature at $14.0$--$14.5$\,mag in S09~(red), K09~(brown), K09b~(pink), and
 C18~(grey) are when the respective IFMRs are crossing the C09 IFMR from a higher
-final mass than C08's to a lower final mass. \textcolor{red}{Such an effect} can be seen propagating
+final mass than C08's to a lower final mass. Such an effect can be seen propagating
 down the WDLFs from the younger populations to the older at about $1$\,mag every
 $2$\,Gyr. Similarly, in the oldest system, we can see that when $0.9\,\msun$
 have recently become WDs in the $13$ and $15$\,Gyr, only the S09b~(red) and
 W09~(purple) models that return lower WD mass than that from C08 are showing
 deficiencies at the brightest end. 
 
-\textcolor{red}{The comparison in Figure~\ref{fig:wdlf_compare_ifmr}} reaffirms
+The comparison in Figure~\ref{fig:wdlf_compare_ifmr} reaffirms
 the finding from \citet{2008MNRAS.387.1693C} that
-\textcolor{red}{the choice of IFMR} has little effect \textcolor{red}{on the
-shape of the WDLFs at $\mathrm{M}_{\mathrm{bol}}>4$}.
+the choice of IFMR has little effect on the
+shape of the WDLFs at $\mathrm{M}_{\mathrm{bol}}>4$.
 We have also shown in the figure that the peaks of the WDLFs differ slightly
-\textcolor{red}{in the bolometric magnitude} at a given age. That comes from the
+in the bolometric magnitude at a given age. That comes from the
 accumulation of a slightly different cooling rate over a cosmic time when a
 progenitor at a given mass turns into slightly different mass WDs as prescribed
 by the different IFMRs.
  
 \begin{figure*}
     \centering
-    \includegraphics[width=\textwidth]{fig_10_wdlf_compare_ifmr.png}
+    \includegraphics[width=\textwidth]{fig_11_wdlf_compare_ifmr.png}
     \caption{Comparing WDLFs with different input IFMRs. Its effect on the WDLF
     is small because of the similarity between them. The large difference at
     the bright end is due to the relatively large difference in the cooling
@@ -1084,7 +1051,7 @@ by the different IFMRs.
 \end{figure*}
 
 Human civilisation has existed for a mere few thousand years, and modern
-astronomy (with digital aid) \textcolor{red}{for} no more than a hundred. We
+astronomy (with digital aid) for no more than a hundred. We
 do not have direct observations on the total mass loss of a star at the end
 stage of stellar evolution. It depends on observations of WDs and giants in
 clusters and iteratively comparing with stellar evolution models. There are a
@@ -1092,10 +1059,9 @@ number of IFMRs available from studying globular
 clusters~\citep{2004A&A...420..515M, 2009ApJ...705..408K}, open
 clusters~\citep{2009ApJ...693..355W, 2016ApJ...818...84C}, a mix of globular
 and open cluster~\citep{2018ApJ...866...21C}, wide MS-WD
-
 binaries~\citep{2008A&A...477..213C, 2012ApJ...746..144Z}, wide
 turnoff/subgiant-WD binaries~\citep{2021ApJ...923..181B}, wide WD-WD
-binaries~\citep{2015ASPC..493..325C, 2015ApJ...815...63A}, colour-magnitude
+binaries~\citep{2015ASPC..493..325C, 2015ApJ...815...63A}, and colour-magnitude
 diagram fitting~\citep{2018ApJ...860L..17E}. We have chosen six (plus three
 with two-part fitting) works that have a good mass coverage to be included
 in this work, and just like the other functions above, a manually provided
@@ -1156,7 +1122,7 @@ callable function is also accepted:
 
 \begin{figure}
     \centering
-    \includegraphics[width=\columnwidth]{fig_06_ifmrs.png}
+    \includegraphics[width=\columnwidth]{fig_07_ifmrs.png}
     \caption{Comparing the three IFMRs provided in this package. They follow
     a similar trend and they are mostly lying on top of each other. S09 and S09b
     have the shallowest IFMRs at the massive end of the initial mass among all.
@@ -1170,38 +1136,30 @@ callable function is also accepted:
 
 
 
-
-
-
-
-
-
 \subsection{Total Stellar Evolution Time}
 \label{sec:evolution_time}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-In Section~\ref{sec:evolution_time}, a complete listing of all the available
-stellar evolution models at different metallicities is provided. \textcolor{red}{Its effect on
-the WDLF is qualitatively described as follows}: the more
-massive stars become WDs at roughly the same time, so the faint end of the
-WDLFs show little differences. At the bright end which is dominated by less
-massive stars, as the evolution times for the lower mass stars reduce with
-metallicity, using a low metallicity stellar evolution model would `squeeze'
-the WDLF towards its fainter part, giving a WDLF with a steeper gradient on
-the bright side. This makes a system appears older if a low metallicity
-model is used for interpreting a more metal-rich population, and vice versa.
-This effect should be considered in conjunction with the metallicity
-dependence of the IFMR in the future when such a relation becomes better
-constrained.
+The effect of metallicity on the WDLF is qualitatively
+described as follows: the more massive stars become WDs at roughly the same
+time, so the faint end of the WDLFs show little differences. However, the
+evolution times for the lower mass stars reduce with metallicity. Thus, at the
+bright end of a WDLF which is dominated by low mass stars, using a low
+metallicity stellar evolution model would `squeeze' the WDLF towards its
+fainter part, giving a WDLF with a steeper gradient on the bright side.
+This makes a system appears older if a low metallicity model is used for
+interpreting a more metal-rich population, and vice versa. This effect should
+be considered in conjunction with the metallicity dependence of the IFMR in
+the future when such a relation becomes better constrained.
 
 The total stellar evolution lifetime has a strong effect on the bright end of a
 WDLF because the hot WDs spent most of their time since star formation as their
 progenitors. However, the MS lifetime has decreasing impact on the WDLF as we
 move towards the fainter end where WDs cooling time dominates over the MS
 lifetime. There is also a metallicity dependency on the MS lifetime. From the
-PARSEC models~\citep{2013EPJWC..4303001B}, extremely metal poor $1\,\msun$ star
-with  $Z=0.0001$ and solar-metallicity star with $Z=0.017$ take $\sim$\,$6$\,Gyr
+PARSEC models~\citep{2013EPJWC..4303001B}, an extremely metal poor $1\,\msun$ star
+with  $Z=0.0001$ and a solar-metallicity star with $Z=0.017$ take $\sim$\,$6$\,Gyr
 and $\sim$\,$11$\,Gyr to go through the stellar evolution stages, respectively,
-before becoming a WD. In the \texttt{WDPhotTools}, we provide $15$ models from
+before becoming a WD. In the \textsc{WDPhotTools}, we provide $15$ models from
 PARSEC~\citep{2012MNRAS.427..127B, 2013EPJWC..4303001B, 2014MNRAS.444.2525C},
 $3$ from the Geneva Code~\citep{2012A&A...537A.146E, 2012A&A...541A..41M,
 2013A&A...553A..24G, 2013A&A...558A.103G}, and $15$ from the
@@ -1253,9 +1211,9 @@ metallicities.
 
 \begin{figure}
     \centering
-    \includegraphics[width=\columnwidth]{fig_05_total_stellar_lifetime.png}
+    \includegraphics[width=\columnwidth]{fig_06_total_stellar_lifetime.png}
     \caption{Comparing seven of the 33 available models: PARSEC is shown with
-    metallicity at z=0.0001, 0.001, 0.01, 0.017 (i.e. solar) and 0.06; Geneva
+    metallicity at $z=0.0001, 0.001, 0.01, 0.017$ (i.e. solar) and $0.06$; Geneva
     and MIST solar metallicity model is plotted for comparison. The low
     metallicity stars evolve more quickly than their higher metallicity counterparts.
     At 1 solar mass, the most metal-poor model evolves twice as fast as the
@@ -1311,14 +1269,14 @@ gas to liquid and eventually form lattice. This releases latent heat that
 contributes to $\sim$\,$5\%$ of the total luminosity~\citep{1976A&A....51..383S}.
 At late time, a few modes of the lattice are excited, the heat capacity drops
 according to the Debye law, which results in enhanced cooling. This process
-kicks in after $10^9$\,yr for a $1.0\,\msun$ WD and over a Hubble time for a
+kicks in after $10^9$\,yr for a $1.0\,\msun$ WD, and after more than a Hubble time for a
 $0.5\,\msun$ WD.
 \end{enumerate}
 
-We have included \textcolor{red}{$24$ cooling models from sixteen pieces of work}
+We have included $24$ cooling models from sixteen pieces of work
 that cover different parts of the parameter space. The following lists the
 keywords for choosing the models:
-\textcolor{red}{
+
 \begin{enumerate}
     \item montreal\_co\_da\_20~\citep{2020ApJ...901...93B}
     \item montreal\_co\_db\_20~\citep{2020ApJ...901...93B}
@@ -1345,7 +1303,7 @@ keywords for choosing the models:
     \item mesa\_one\_da\_18~\citep{2018MNRAS.480.1547L}
     \item mesa\_one\_db\_18~\citep{2018MNRAS.480.1547L}
 \end{enumerate}
-}
+
 See Table~\ref{tab:cooling_models} for the details of each model. We divide
 the models into three groups:
 low~($\mathcal{M}/\msun < 0.5$),
@@ -1364,7 +1322,11 @@ WDs.
         \citet[][B20]{2020ApJ...901...93B} & \checkmark &  \checkmark  & \checkmark &    CO &     \textcolor{black}{H/He} &            $0.2-1.3$             & -- \\
         &&&&&&&\\
 
-        \multicolumn{8}{c}{LPCODE smooth grid~(lpcode\_da\_22)} \\\hline
+        \multicolumn{8}{c}{BaSTI smooth grid} \\\hline
+        \citet[][S10]{2010ApJ...716.1241S}&     --     &  \checkmark  & \checkmark &    CO &      \textcolor{black}{H/He} &           $0.54-1.2$             & W/Wo$^{\dagger}$ Phase Separation\\
+        &&&&&&&\\
+
+        \multicolumn{8}{c}{LPCODE smooth grid} \\\hline
         {\citet{2013A&A...557A..19A}} & \checkmark &     --     &     --     & He & \textcolor{black}{H} & -- & -- \\
         \citet{2016ApJ...823..158C}   &     --     & \checkmark &     --     & He & \textcolor{black}{H} & -- & -- \\
         {\citet{2019A&A...625A..87C}} &     --     &     --     & \checkmark & He & \textcolor{black}{H} & -- & -- \\
@@ -1383,18 +1345,14 @@ WDs.
         {\citet[][C19]{2019A&A...625A..87C}}&     --     &      --      & \checkmark &   ONe &      \textcolor{black}{H/He} &           $1.10-1.29$            & -- \\
         &&&&&&&\\
 
-        \multicolumn{8}{c}{BaSTI} \\\hline
-        \citet[][S10]{2010ApJ...716.1241S}&     --     &  \checkmark  & \checkmark &    CO &      \textcolor{black}{H/He} &           $0.54-1.2$             & W/Wo$^{\dagger}$ Phase Separation\\
-        &&&&&&&\\
-
         \multicolumn{8}{c}{MESA-based Models} \\\hline
         \citet{2018MNRAS.480.1547L} &     --     &      --      & \checkmark & CO/Ne &      \textcolor{black}{H/He} &          $1.012-1.308$           & --
 
     \end{tabular}
-    \caption{\textcolor{red}{The complete listing of all the cooling models
-    available in the public domain contained in \texttt{WDPhotTools}. They
+    \caption{The complete listing of all the cooling models
+    available from the public domain contained in \textsc{WDPhotTools}. They
     broadly come from four sources, where the LPCODE has the most varied
-    grid for various parameters. The two \textit{smooth grid}s can provide
+    grid for various parameters. The three \textit{smooth grid}s can provide
     the smoothest interpolated cooling models, the mix-and-match of other
     models are likely to produce artefacts. We recommend separating the
     low, intermediate and high mass models to generate subset of the WDLFs
@@ -1402,14 +1360,14 @@ WDs.
     checkmarks in the low ($\mathcal{M}_f/\msun < 0.5$), intermediate
     ($0.5 < \mathcal{M}_f/\msun < 1.0$) and high mass ($1.0 < \mathcal{M}_f/\msun$)
     ranges denotes if the models are used for computation in that range.
-    ($^{\dagger}$\textit{With/Without.})}
+    ($^{\dagger}$\textit{With/Without.})
     \label{tab:cooling_models}
 \end{table*}
 
 There are too many possible combinations of cooling models
-\textcolor{red}{to display them all}, so in
+to display them all, so in
 Figure~\ref{fig:wdlf_compare_da_cooling_models}, only four example
-sets of models are shown\textcolor{red}{. The} combinations are listed in
+sets of models are shown. The combinations are listed in
 Table~\ref{tab:cooling_model_combination}. In order to assess the quality of
 the interpolation at the model boundaries at the three mass ranges, we can
 compute the total WDLF by summing the constituent low, intermediate and high
@@ -1421,9 +1379,9 @@ In combination A, we use the pure Montreal stack. This naturally gives the
 smoothest interpolated grid across the entire parameter space because of the
 homogeneous choice of input physics and computation tools. Combination B makes
 use of the most recent low, intermediate and high mass models from the
-LPCODE\footnote{\textcolor{red}{We use the smooth grid pre-interpolated by
-their research group, as opposed to the individually published grids.}}.
-In \textcolor{red}{combinations} C and D, the low mass model is adopting that from the Montreal
+LPCODE\footnote{We use the smooth grid pre-interpolated by
+their research group, as opposed to the individually published grids.}.
+In combinations C and D, the low mass model is adopting that from the Montreal
 group, while the intermediate and high mass models are from the BaSTI with and
 without the inclusion of phase separation in the computation.
 
@@ -1448,7 +1406,7 @@ cooling down.
 
 \begin{figure*}
     \centering
-    \includegraphics[width=\textwidth]{fig_11_wdlf_compare_da_cooling_models.png}
+    \includegraphics[width=\textwidth]{fig_12_wdlf_compare_da_cooling_models.png}
     \caption{Comparing WDLFs with different input cooling models. See
     Table~\ref{tab:cooling_model_combination} for the choice of input models.
     The differences in the WDLFs are small down to $14$\,mag. After that, the
@@ -1471,13 +1429,13 @@ basic inspection of the models.
 The \texttt{reddening} handles either choice of interpolation of the
 extinctions, using a customised 2D spline interpolator if the tabulated values
 from \citet{2011ApJ...737..103S} is used; or with the
-\verb+scipy.interpolate.RegularGridInterpolator+ if the spectral type corrected
-extinction values are chosen for dereddening. \textcolor{red}{As mentioned in
+\texttt{scipy.interpolate.RegularGridInterpolator} if the spectral type corrected
+extinction values are chosen for dereddening. As mentioned in
 Section~\ref{sec:gf21_comparison}, the extinction coefficient is tailored to the
 temperature and the surface gravity of the target. Those coefficients are
 obtained by convolving filter profiles with model spectra and convert the
 total extinction into the extinction in each filter as a function of
-temperature and surface gravity.}
+temperature and surface gravity.
 
 The other background module, \texttt{util}, supplies the customised 2D spline.
 Figure~\ref{fig:cooling_tracks_default} is the default plot making use of the
@@ -1489,12 +1447,12 @@ We provide a toolkit to allow easy access to synthetic photometry of WDs with
 a number of formatters to handle the non-uniform model files and units from
 various models. These models can be flexibly interpolated with two choices of
 interpolators for immediate use with ease. Building on these interpolated
-grids, this toolkit can perform photometric fitting of \textcolor{red}{WDs with
-or without a known distance, though the reliability is much higher if the distance is provided,} and
+grids, this toolkit can perform photometric fitting of WDs with
+or without a known distance, though the reliability is much higher if the distance is provided, and
 it can also correct for reddening at each step of the iteration during the
 minimisation/sampling.
 
-\textcolor{red}{We also make sure this grid provides a convenient and flexible
+We also make sure this grid provides a convenient and flexible
 tool to construct WDLFs, allowing users to choose from a large number of
 stellar evolution models and cooling models. We cover one set of DA and DB
 atmosphere model, three initial mass functions, and three preset star formation
@@ -1503,14 +1461,14 @@ models can be supplied for each step of the WDLF computation (apart from
 the cooling model), in order to allow a high level of flexibility when it
 comes to more advanced usage.
 
-In the future development of \texttt{WDPhotTools}, we intend to}
+In the future development of \textsc{WDPhotTools}, we intend to
 \begin{enumerate}
-    \item \textcolor{red}{include new models that will become available;}
-    \item \textcolor{red}{include synthetic photometry also provided in some of the cooling models;}
-    \item \textcolor{red}{include means to use a user provided filter profile that can be convolved with the spectral energy distribution functions publicly available\footnote{\url{https://warwick.ac.uk/fac/sci/physics/research/astro/people/tremblay/modelgrids}};}
-    \item \textcolor{red}{allow the use of different mass-radius relations;}
-    \item \textcolor{red}{use user provided interstellar extinction correction;}
-    \item \textcolor{red}{user supplied interpolator.}
+    \item include new models that will become available;
+    \item include synthetic photometry also provided in some of the cooling models;
+    \item include means to use a user provided filter profile that can be convolved with the spectral energy distribution functions publicly available\footnote{\url{https://warwick.ac.uk/fac/sci/physics/research/astro/people/tremblay/modelgrids}};
+    \item allow the use of different mass-radius relations;
+    \item use user provided interstellar extinction correction;
+    \item user supplied interpolator.
 \end{enumerate}
 
 
@@ -1519,10 +1477,10 @@ the future Gaia data releases, and deeper photometry couple with proper
 motion measurements~(an alternative way to effectively select WD) with the
 new generation facilities, for example, the Vera Rubin Observatory for the
 southern sky, EUCLID and the Nancy Grace Roman Telescope for the study of the
-halo WDs~\citep{2020ApJ...900..139F}. \textcolor{red}{The \texttt{WDPhotTools}
+halo WDs~\citep{2020ApJ...900..139F}. The \textsc{WDPhotTools}
 will provide a user-friendly, convenient, and flexible tool for this
 generation of astronomers to have an easier starting position and a more
-gentle initial learning curve.}
+gentle initial learning curve.
 
 \section*{Acknowledgements}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
