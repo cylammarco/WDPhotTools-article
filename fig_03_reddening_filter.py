@@ -216,7 +216,7 @@ ax1b.text(7500.0, 3.8, "T$_{\mathrm{eff}}=$10000 K", c="0.3")
 ax1b.text(7500.0, 4.6, "T$_{\mathrm{eff}}=$30000 K", c="0.0")
 ax1b.set_ylim(0, 6.0)
 ax1b.set_ylabel(
-    "Kirkpatrick Extinction (mag / E(B - V))", color=extinction_colour
+    "Fitzpatrick Extinction (mag / E(B - V))", color=extinction_colour
 )
 
 ax1b.spines["right"].set_color(extinction_colour)
@@ -342,5 +342,5 @@ ax2.set_ylabel("A$_{\mathrm{filter}}$ / E(B-V)$_{Rv=3.1}$")
 
 plt.tight_layout()
 plt.subplots_adjust(hspace=0.0)
-plt.savefig("fig_12_reddening_filter.png")
-plt.savefig("fig_12_reddening_filter.pdf")
+plt.savefig("fig_03_reddening_filter.png")
+plt.savefig("fig_03_reddening_filter.pdf")
